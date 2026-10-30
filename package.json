@@ -1,0 +1,27 @@
+{
+  "name": "xiaolin-paper-toss",
+  "private": true,
+  "version": "1.0.0",
+  "description": "小林这球必须进：办公室纸团投篮网页游戏",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "npm run typecheck && vite build",
+    "preview": "vite preview --host",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "solve": "tsx scripts/solve-levels.ts",
+    "test:e2e": "node e2e/e2e.mjs"
+  },
+  "dependencies": {
+    "phaser": "^3.90.0"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "playwright-core": "^1.64.1",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.5",
+    "vitest": "^5.0.5"
+  }
+}
