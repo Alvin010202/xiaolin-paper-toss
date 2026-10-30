@@ -78,6 +78,13 @@ describe('存档解析与校验', () => {
     expect(d.daily['2026-10-30']).toEqual({ ...meta, best: 800, plays: 3 })
   })
 
+  it('每日挑战规则版本变化后，当天最高分重新计算，不与旧规则成绩混在一起', () => {
+    const d = defaultSave()
+    recordDaily(d, { date: '2026-10-30', templateId: 'gap', seed: 1, ruleVersion: 'daily-v1' }, 900)
+    expect(recordDaily(d, { date: '2026-10-30', templateId: 'gap', seed: 2, ruleVersion: 'daily-v2' }, 300)).toBe(true)
+    expect(d.daily['2026-10-30']).toMatchObject({ best: 300, plays: 1, ruleVersion: 'daily-v2', seed: 2 })
+  })
+
   it('每日记录只保留最近的天数', () => {
     const d = defaultSave()
     for (let i = 0; i < DAILY_KEEP + 10; i++) {

@@ -392,7 +392,7 @@ async function openLevel(page, id) {
     assert(t.includes('挑战完成') && t.includes('0 分'), `每日结算不对：${t}`)
     const save = await page.evaluate((k) => JSON.parse(localStorage.getItem(k)), SAVE_KEY)
     const rec = Object.values(save.daily)[0]
-    assert(rec && rec.templateId && Number.isFinite(rec.seed) && rec.ruleVersion === 'daily-v1' && rec.plays === 1, `每日记录不完整：${JSON.stringify(save.daily)}`)
+    assert(rec && rec.templateId && Number.isFinite(rec.seed) && rec.ruleVersion === 'daily-v2' && rec.plays === 1, `每日记录不完整：${JSON.stringify(save.daily)}`)
   })
 
   await check('桌面：设置可切换声音与减少动画并保存；重置存档有确认说明', async () => {

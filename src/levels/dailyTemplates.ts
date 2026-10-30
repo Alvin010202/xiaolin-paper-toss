@@ -11,7 +11,7 @@ export const DAILY_TEMPLATES: DailyTemplate[] = [
     name: '工位越野',
     scene: 'desk',
     throwPoint: { x: 100, y: 720 },
-    bin: { x: 466, y: 860 },
+    bin: { x: 440, y: 860 },
     staticObstacles: [
       { kind: 'wall', x: 532, y: 560, w: 16, h: 600 },
       { kind: 'desk', x: 290, y: 805, w: 180, h: 110 },
@@ -52,7 +52,7 @@ export const DAILY_TEMPLATES: DailyTemplate[] = [
     scene: 'meeting',
     throwPoint: { x: 100, y: 720 },
     bin: { x: 380, y: 860, motion: { type: 'pingpong', from: { x: 300, y: 860 }, to: { x: 440, y: 860 }, periodMs: 4000 } },
-    staticObstacles: [{ kind: 'whiteboard', x: 528, y: 600, w: 24, h: 420 }],
+    staticObstacles: [{ kind: 'whiteboard', x: 528, y: 600, w: 24, h: 420 }, { kind: 'screen', x: 300, y: 490, w: 200, h: 26 }],
     dynamicObstacles: [],
     windZones: [],
   },

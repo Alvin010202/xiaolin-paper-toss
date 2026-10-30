@@ -177,7 +177,8 @@ export function recordLevelStars(data: SaveData, levelId: number, stars: 0 | 1 |
 
 /** 写入每日挑战成绩：次数累加，最高分只在更高时覆盖；返回是否刷新了最高分 */
 export function recordDaily(data: SaveData, rec: Omit<DailyRecord, 'best' | 'plays'>, score: number): boolean {
-  const prev = data.daily[rec.date]
+  const old = data.daily[rec.date]
+  const prev = old && old.ruleVersion === rec.ruleVersion && old.templateId === rec.templateId ? old : undefined
   const isBest = !prev || score > prev.best
   data.daily[rec.date] = {
     ...rec,

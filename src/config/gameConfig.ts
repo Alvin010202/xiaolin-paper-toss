@@ -47,7 +47,7 @@ export const THROW = {
   minSpeed: 6,
   maxSpeed: 19,
   /** 轨迹预览只模拟飞行前段的这么多步 */
-  previewSteps: 22,
+  previewSteps: 14,
   previewDotEvery: 2,
   /** 单次投掷最长时间 */
   timeLimitMs: 7000,
@@ -60,7 +60,7 @@ export const THROW = {
 
 /** 垃圾桶尺寸与命中判定 */
 export const BIN = {
-  innerWidth: 74,
+  innerWidth: 60,
   wallThickness: 10,
   bottomThickness: 10,
   defaultHeight: 92,
@@ -78,6 +78,6 @@ export const RULES = {
   dailyStreakStep: 25,
   dailyStreakMax: 100,
   /** 每日挑战规则版本：规则或模板改动时需要升级 */
-  dailyRuleVersion: 'daily-v1',
+  dailyRuleVersion: 'daily-v2',
   dailyTimeZone: 'Asia/Shanghai',
 } as const
